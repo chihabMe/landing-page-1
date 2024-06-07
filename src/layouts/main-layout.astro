@@ -1,0 +1,19 @@
+---
+import NavBar from "../components/NavBar";
+const {title} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="lading page 1"/>
+    <title> {title ??"landing 1"}</title>
+</head>
+<body>
+    <NavBar client:load />
+    <slot/>
+    
+</body>
+</html>
