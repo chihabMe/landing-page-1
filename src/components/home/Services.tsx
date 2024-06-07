@@ -1,3 +1,5 @@
+import Button from "../ui/Button";
+
 const services = [
   {
     title: "Search doctor",
@@ -32,7 +34,13 @@ const services = [
 ];
 const Services = () => {
   return (
-    <section className="">
+    <section className=" relative py-8">
+      <img
+        className="absolute -top-8 left-[140px]"
+        src="/images/home/blue.png"
+        alt="blue bubble -z-10"
+      />
+
       <div className="container mx-auto flex flex-col items-center py-8 ">
         <h1 className="capitalize font-semibold text-center py-2 text-3xl">
           Our Services{" "}
@@ -45,7 +53,12 @@ const Services = () => {
           your health
         </p>
       </div>
-      <div className="py-10 container mx-auto ">
+      <div className="  container my-10  max-w-[1100px] mx-auto  relative ">
+        <img
+          className="absolute top-1/2 -translate-y-10  -right-10"
+          src="/images/home/element.png"
+          alt="blue bubble -z-10"
+        />
         <ul className="grid gap-8 grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 ">
           {services.map((service) => (
             <ServiceItem
@@ -55,6 +68,11 @@ const Services = () => {
             />
           ))}
         </ul>
+      </div>
+      <div className="flex justify-center py-8 ">
+        <Button className="text-blue-500 px-10 hover:bg-blue-500 hover:text-white transition-all duration-300 bg-white ring-2 ring-blue-500">
+          Learn more
+        </Button>
       </div>
     </section>
   );
@@ -70,7 +88,7 @@ const ServiceItem = ({
   image: string;
 }) => {
   return (
-    <li className=" hover:ring-2 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6  items-center shadow-md  rounded-xl d   ">
+    <li className=" bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6  items-center shadow-md  rounded-xl d   ">
       <img src={image} alt={`${image} image`} />
       <h2 className=" font-medium text-black text-2xl">{title}</h2>
       <p className="text-gray-500 ">{text}</p>

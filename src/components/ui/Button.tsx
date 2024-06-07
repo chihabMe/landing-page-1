@@ -9,7 +9,7 @@ const Button = ({ children, className }: Props) => {
   return (
     <button
       className={cn(
-        "bg-blue-500 text-white rounded-full  font-medium px-8 py-2.5 cursor-pointer",
+        "bg-blue-500 hover:opacity-95 text-white rounded-full  font-medium px-8 py-2.5 cursor-pointer",
         className
       )}
     >

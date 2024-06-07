@@ -17,7 +17,7 @@ const Intro = () => {
           <Button className="my-10 font-bold py-4">Consult today</Button>
         </div>
         <div>
-          <img src="/images/home/intro.png" />
+          <img alt="intro image" src="/images/home/intro.png" />
         </div>
       </div>
     </section>
