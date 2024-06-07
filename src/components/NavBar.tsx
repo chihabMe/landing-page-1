@@ -1,52 +1,34 @@
-import  { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false); // Explicitly set isOpen to false to close the menu
-  };
-
   return (
-    <header className="bg-blue-500 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <a href="/" className="text-2xl font-bold">MySite</a>
-        <div className="hidden md:flex items-center">
-          {/* Desktop Navigation Links */}
-          <nav className="flex space-x-4">
-            <a href="/" className="text-white hover:text-gray-200 px-3 py-2 rounded-md font-medium">Home</a>
-            <a href="/about" className="text-white hover:text-gray-200 px-3 py-2 rounded-md font-medium">About</a>
-            <a href="/contact" className="text-white hover:text-gray-200 px-3 py-2 rounded-md font-medium">Contact</a>
-          </nav>
-        </div>
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-        <nav className={`md:hidden absolute top-0 left-0 w-full h-screen bg-blue-500 text-white flex flex-col justify-center items-center ${isOpen ? 'block' : 'hidden'}`}>
-          {/* Add a close button to the top of the menu */}
-          <button onClick={closeMenu} className="absolute top-4 right-4 focus:outline-none">
-            <X className="h-6 w-6" />
-          </button>
-          <motion.a href="/" className="block my-4" whileHover={{ scale: 1.1 }} >
-            Home
-          </motion.a>
-          <motion.a href="/about" className="block my-4" whileHover={{ scale: 1.1 }} >
-            About
-          </motion.a>
-          <motion.a href="/contact" className="block my-4" whileHover={{ scale: 1.1 }} >
-            Contact
-          </motion.a>
-        </nav>
-      </div>
+    <header className="flex align-items justify-between container mx-auto py-10">
+      <div className="font-semibold text-2xl">Trafalgar</div>
+      <nav>
+        <ul className="flex space-x-6 items-center">
+          <NavLinkItem href="/" text="Home" />
+          <NavLinkItem href="/find-a-doctor" text="Find a doctor" />
+          <NavLinkItem href="/apps" text="Apps" />
+          <NavLinkItem href="/testimonials" text="Testimonials" />
+          <NavLinkItem href="/about" text="About us" />
+        </ul>
+      </nav>
     </header>
+  );
+};
+
+const NavLinkItem = ({ href, text }: { href: string; text: string }) => {
+  const isActive = href == "/";
+  return (
+    <li
+      className={` ${
+        isActive && "text-gray-900"
+      } hover:text-gray-800 transition-all duration-300 text-gray-500 font-medium px-2`}
+    >
+      <a href={href}>{text}</a>
+    </li>
   );
 };
 
