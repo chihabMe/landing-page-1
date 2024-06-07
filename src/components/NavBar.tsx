@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -35,13 +35,13 @@ const NavBar = () => {
           <button onClick={closeMenu} className="absolute top-4 right-4 focus:outline-none">
             <X className="h-6 w-6" />
           </button>
-          <motion.a href="/" className="block my-4" whileHover={{ scale: 1.1 }} activeClassName="font-bold">
+          <motion.a href="/" className="block my-4" whileHover={{ scale: 1.1 }} >
             Home
           </motion.a>
-          <motion.a href="/about" className="block my-4" whileHover={{ scale: 1.1 }} activeClassName="font-bold">
+          <motion.a href="/about" className="block my-4" whileHover={{ scale: 1.1 }} >
             About
           </motion.a>
-          <motion.a href="/contact" className="block my-4" whileHover={{ scale: 1.1 }} activeClassName="font-bold">
+          <motion.a href="/contact" className="block my-4" whileHover={{ scale: 1.1 }} >
             Contact
           </motion.a>
         </nav>
