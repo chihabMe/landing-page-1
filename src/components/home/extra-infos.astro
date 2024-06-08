@@ -1,0 +1,57 @@
+---
+import RightImage from "../../assets/images/home/right-image.png";
+import LeftImage from "../../assets/images/home/left-image.png";
+import LineImage from "../../assets/images/home/line.png";
+import { ArrowDown } from "lucide-react";
+import { Image } from "astro:assets";
+import Button from "../ui/Button";
+---
+
+<section
+  class="container reltaive mx-auto flex items-center justify-between h-[700px]"
+>
+  <div>
+    <Image src={RightImage} alt="right image" />
+  </div>
+  <div class="flex items-center">
+    <div class="w-[700px] ml-8">
+      <h2 class="font-bold text-3xl text-gray-800">Leading healthcare</h2>
+      <h2 class="font-bold text-3xl text-gray-800">providers</h2>
+      <Image src={LineImage} alt="line image" class="py-8" />
+      <p class="text-gray-700 w-[500px]">
+        Trafalgar provides progressive, and affordable healthcare, accessible on
+        mobile and online for everyone. To us, it’s not just work. We take pride
+        in the solutions we deliver
+      </p>
+
+      <Button
+        className="text-blue-500 px-10 my-8 hover:bg-blue-500 hover:text-white transition-all duration-300 bg-white ring-2 ring-blue-500"
+      >
+        Learn more
+      </Button>
+    </div>
+  </div>
+</section>
+
+<section class="container mx-auto flex items-center justify-between h-[700px]">
+  <div class="flex items-center">
+    <div class="w-[800px]">
+      <h2 class="font-bold text-3xl text-gray-800">Download our</h2>
+      <h2 class="font-bold text-3xl text-gray-800">mobile apps</h2>
+      <Image src={LineImage} alt="line image" class="py-8" />
+      <p class="text-gray-700 w-[500px]">
+        Trafalgar provides progressive, and affordable healthcare, accessible on
+        mobile and online for everyone. To us, it’s not just work. We take pride
+        in the solutions we deliver
+      </p>
+
+      <Button
+        className="text-blue-500 flex ites-center space-x-2 px-10 my-8 hover:bg-blue-500 hover:text-white transition-all duration-300 bg-white ring-2 ring-blue-500"
+      >
+        <span> Download </span>
+        <ArrowDown size={24} />
+      </Button>
+    </div>
+    <Image src={LeftImage} alt="left image" />
+  </div>
+</section>

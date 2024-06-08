@@ -1,113 +1,16 @@
 ---
 import MainLayout from "../layouts/main-layout.astro";
-import Button from "../components/ui/Button";
-import { Image } from "astro:assets";
-import Frame1 from "../assets/images/home/frame1.png";
-import Frame2 from "../assets/images/home/frame2.png";
-import Frame3 from "../assets/images/home/frame3.png";
-import Frame4 from "../assets/images/home/frame4.png";
-import Frame5 from "../assets/images/home/frame5.png";
-import Frame6 from "../assets/images/home/frame6.png";
-import IntroImage from "../assets/images/home/intro.png";
-import ElementImage from "../assets/images/home/element.png";
-import BlueImage from "../assets/images/home/blue.png";
-import LineImage from "../assets/images/home/line.png";
+import Services from "../components/home/services.astro";
+import Intro from "../components/home/intro.astro";
+import ExtraInfos from "../components/home/extra-infos.astro";
+import Reviews from "../components/home/reviews";
 ---
 
 <MainLayout title="home page">
   <main>
-    <section class="relative w-full max-w-[1800px] mx-auto">
-      <Image
-        src={ElementImage}
-        class="top-1 left-1 absolute"
-        alt="element image"
-      />
-      <div
-        class="container mx-auto flex items-center justify-between min-h-[78vh] pt-10"
-      >
-        <div class="max-w-screen-sm">
-          <h1 class="text-5xl font-semibold text-lg py-2">
-            Virtual healthcare
-          </h1>
-          <h1 class="text-5xl font-semibold text-lg py-2">for you</h1>
-          <p class="text-gray-600 py-4 w-full max-w-[400px]">
-            Trafalgar provides progressive, and affordable healthcare,
-            accessible on mobile and online for everyone
-          </p>
-          <Button client:load  className="my-10 font-bold py-4">Consult today</Button>
-        </div>
-        <div>
-          <Image alt="intro image" src={IntroImage} />
-        </div>
-      </div>
-    </section>
-
-    <section class="relative py-8">
-      <Image
-        src={BlueImage}
-        class="absolute -top-8 left-[140px]"
-        alt="blue bubble -z-10"
-      />
-      <div class="container mx-auto flex flex-col items-center py-8">
-        <h1 class="capitalize font-semibold text-center py-2 text-3xl">
-          Our Services
-        </h1>
-        <Image src={LineImage} class="py-4" alt="line image" />
-        <p class="text-gray-500 w-[900px] text-center">
-          We provide to you the best choices for you. Adjust it to your health
-          needs and make sure you undergo treatment with our highly qualified
-          doctors. You can consult with us which type of service is suitable for
-          your health.
-        </p>
-      </div>
-      <div class="container my-10 max-w-[1100px] mx-auto relative">
-        <Image
-          src={ElementImage}
-          class="absolute top-1/2 -translate-y-10 -right-10"
-          alt="blue bubble -z-10"
-        />
-        <ul
-          class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
-        >
-          <li class="bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6 items-center shadow-md rounded-xl">
-            <Image src={Frame1} alt="Search doctor image" />
-            <h2 class="font-medium text-black text-2xl">Search doctor</h2>
-            <p class="text-gray-500">Choose your doctor from thousands of specialist, general, and trusted hospitals</p>
-          </li>
-          <li class="bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6 items-center shadow-md rounded-xl">
-            <Image src={Frame2} alt="Online pharmacy image" />
-            <h2 class="font-medium text-black text-2xl">Online pharmacy</h2>
-            <p class="text-gray-500">Buy your medicines with our mobile application with a simple delivery system</p>
-          </li>
-          <li class="bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6 items-center shadow-md rounded-xl">
-            <Image src={Frame3} alt="Consultation image" />
-            <h2 class="font-medium text-black text-2xl">Consultation</h2>
-            <p class="text-gray-500">Free consultation with our trusted doctors and get the best recommendations</p>
-          </li>
-          <li class="bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6 items-center shadow-md rounded-xl">
-            <Image src={Frame4} alt="Details info image" />
-            <h2 class="font-medium text-black text-2xl">Details info</h2>
-            <p class="text-gray-500">Free consultation with our trusted doctors and get the best recommendations</p>
-          </li>
-          <li class="bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6 items-center shadow-md rounded-xl">
-            <Image src={Frame5} alt="Emergency care image" />
-            <h2 class="font-medium text-black text-2xl">Emergency care</h2>
-            <p class="text-gray-500">You can get 24/7 urgent care for yourself or your children and your lovely family</p>
-          </li>
-          <li class="bg-white hover:ring-2 z-10 hover:ring-blue-400 transition-all duration-300 cursor-pointer p-8 py-10 space-y-6 items-center shadow-md rounded-xl">
-            <Image src={Frame6} alt="Tracking image" />
-            <h2 class="font-medium text-black text-2xl">Tracking</h2>
-            <p class="text-gray-500">Track and save your medical history and health data</p>
-          </li>
-        </ul>
-      </div>
-      <div class="flex justify-center py-8">
-        <Button
-          className="text-blue-500 px-10 hover:bg-blue-500 hover:text-white transition-all duration-300 bg-white ring-2 ring-blue-500"
-        >
-          Learn more
-        </Button>
-      </div>
-    </section>
+    <Intro />
+    <Services />
+    <ExtraInfos />
+    <Reviews client:load />
   </main>
 </MainLayout>
