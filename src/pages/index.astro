@@ -4,6 +4,7 @@ import Services from "../components/home/services.astro";
 import Intro from "../components/home/intro.astro";
 import ExtraInfos from "../components/home/extra-infos.astro";
 import Reviews from "../components/home/reviews";
+import Articles from "../components/home/articles.astro";
 ---
 
 <MainLayout title="home page">
@@ -12,5 +13,6 @@ import Reviews from "../components/home/reviews";
     <Services />
     <ExtraInfos />
     <Reviews client:load />
+    <Articles />
   </main>
 </MainLayout>
